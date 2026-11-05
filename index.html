@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chris-Loan Atannon – Ingénieur IA et Big Data</title>
+<meta name="description" content="Portfolio de Chris-Loan Atannon, ingénieur IA et Big Data : data science, machine learning et développement de solutions intelligentes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F8F3; --surface:#FFFFFF; --ink:#0F2B1C; --muted:#56675C; --line:#D6DFD3;
+  --accent:#34D11A; --accent-ink:#0F2B1C; --glow:rgba(52,209,26,.16);
+  --display:'Bricolage Grotesque',Georgia,sans-serif; --body:'Figtree',system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0C1A12;--surface:#12251A;--ink:#E9F2EA;--muted:#9DB0A2;--line:#244031;--glow:rgba(52,209,26,.12)}
+}
+:root[data-theme="dark"]{--bg:#0C1A12;--surface:#12251A;--ink:#E9F2EA;--muted:#9DB0A2;--line:#244031;--glow:rgba(52,209,26,.12)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+
+/* navigation */
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--display);font-weight:800;text-decoration:none;font-size:1.15rem}
+.logo i{display:inline-block;width:.55em;height:.55em;background:var(--accent);border-radius:50%;margin-left:.2em}
+nav ul{display:flex;gap:1.6rem;list-style:none;padding:0;align-items:center}
+nav ul a{text-decoration:none;font-weight:500;font-size:.95rem;color:var(--muted);transition:color .2s}
+nav ul a:hover{color:var(--ink)}
+#theme{background:none;border:1px solid var(--line);color:var(--ink);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:1rem}
+@media(max-width:640px){nav ul li:not(:last-child){display:none}}
+
+/* hero */
+.hero{position:relative;min-height:calc(100svh - 64px);display:flex;align-items:center;overflow:hidden}
+#net{position:absolute;inset:0;width:100%;height:100%}
+.hero .wrap{position:relative;pointer-events:none}
+.hero .wrap *{pointer-events:auto}
+.hello{display:flex;align-items:center;gap:.9rem;color:var(--muted);font-weight:500;margin-bottom:1.2rem}
+.avatar{width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid var(--accent)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(3.4rem,12.5vw,9.5rem);line-height:.88;letter-spacing:-.035em}
+h1 span{display:block;overflow:hidden;padding-bottom:.06em}
+h1 span b{display:inline-block;font-weight:800;transform:translateY(105%);animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards}
+h1 span:nth-child(2) b{animation-delay:.12s;-webkit-text-stroke:2px var(--ink);color:transparent}
+.role{margin-top:1.8rem;font-size:clamp(1.15rem,2.4vw,1.5rem);font-weight:500;min-height:2.2em}
+.role em{font-style:normal;background:linear-gradient(transparent 62%,var(--accent) 62%);padding:0 .15em}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
+.btn{display:inline-block;padding:.8rem 1.5rem;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--ink);transition:transform .2s,background .2s,color .2s}
+.btn.main{background:var(--accent);border-color:var(--accent);color:#0F2B1C}
+.btn:hover{transform:translateY(-3px)}
+@keyframes rise{to{transform:none}}
+
+/* sections */
+section{padding:6rem 0;border-top:1px solid var(--line)}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.025em;line-height:1.05;margin-bottom:2.2rem}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.about p{max-width:60ch}
+.facts{display:grid;gap:1rem}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.2rem 1.4rem}
+.fact strong{display:block;font-family:var(--display);font-size:1.25rem}
+.fact span{color:var(--muted);font-size:.95rem}
+@media(max-width:760px){.about{grid-template-columns:1fr}}
+
+/* compétences */
+.skills{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.skills h3,.tl h3{font-family:var(--display);font-size:1.2rem;margin-bottom:1.2rem}
+.bar{margin-bottom:1.35rem}
+.bar p{font-weight:600;font-size:.98rem;margin-bottom:.4rem}
+.bar div{height:6px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar div i{display:block;height:100%;width:0;background:var(--accent);border-radius:6px;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.tool{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;border-bottom:1px solid var(--line);font-weight:500}
+.dots{display:flex;gap:6px}
+.dots s{width:12px;height:12px;border-radius:50%;background:var(--line);transition:background .4s}
+.dots s.on{background:var(--accent)}
+@media(max-width:760px){.skills{grid-template-columns:1fr;gap:2.5rem}}
+
+/* parcours */
+.tl{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.tl ol{list-style:none;padding:0 0 0 1.6rem;border-left:2px solid var(--line);position:relative}
+.tl li{position:relative;padding-bottom:2rem}
+.tl li::before{content:"";position:absolute;left:calc(-1.6rem - 7px);top:.45rem;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px var(--glow)}
+.tl h4{font-size:1.05rem;line-height:1.35}
+.tl .sub{color:var(--muted);font-size:.93rem;margin-top:.15rem}
+.tl ul{margin:.6rem 0 0;padding-left:1.1rem;font-size:.97rem;color:var(--muted)}
+.tl ul li{padding:0 0 .25rem;position:static}
+.tl ul li::before{display:none}
+@media(max-width:760px){.tl{grid-template-columns:1fr;gap:2.5rem}}
+
+/* contact */
+.contact{text-align:left}
+.contact h2{font-size:clamp(2.4rem,8vw,6rem)}
+.contact .mail{display:inline-block;font-family:var(--display);font-weight:800;font-size:clamp(1.2rem,4.5vw,2.4rem);text-decoration:none;border-bottom:4px solid var(--accent);word-break:break-all;transition:background .2s}
+.contact .mail:hover{background:var(--glow)}
+.links{display:flex;flex-wrap:wrap;gap:2rem;margin-top:2rem;color:var(--muted)}
+footer{padding:2rem 0;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  h1 span b{transform:none}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<header>
+  <nav class="wrap" aria-label="Navigation principale">
+    <a class="logo" href="#top">CLA<i></i></a>
+    <ul>
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#parcours">Parcours</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><button id="theme" aria-label="Changer le thème">◐</button></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <canvas id="net" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div class="hello">
+        <img class="avatar" src="photo.jpg" alt="Portrait de Chris-Loan Atannon" onerror="this.remove()">
+        <span>Bonjour, je suis</span>
+      </div>
+      <h1 aria-label="Chris-Loan Atannon"><span><b>Chris-Loan</b></span><span><b>Atannon</b></span></h1>
+      <p class="role">Ingénieur <em id="word">IA</em></p>
+      <div class="cta">
+        <a class="btn main" href="#contact">Me contacter</a>
+        <a class="btn" href="#parcours">Voir mon parcours</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="apropos">
+    <div class="wrap about">
+      <div class="reveal">
+        <h2>Des données aux solutions intelligentes.</h2>
+        <p>Ingénieur diplômé en Intelligence Artificielle et Big Data, je suis passionné par la Data Science, le Machine Learning et le développement de solutions intelligentes.</p>
+        <p style="margin-top:1rem">Rigoureux et orienté résultats, je souhaite mettre mes compétences au service de projets innovants et à forte valeur ajoutée.</p>
+      </div>
+      <div class="facts reveal">
+        <div class="fact"><strong>Master en Ingénierie IA et Big Data</strong><span>ISGA, Casablanca (2023 – 2026)</span></div>
+        <div class="fact"><strong>Bachelor en Science informatique</strong><span>EPITECH Bénin, Cotonou (2020 – 2023)</span></div>
+        <div class="fact"><strong>Développeur web et mobile</strong><span>Trois expériences en entreprise et en administration</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="competences">
+    <div class="wrap">
+      <h2 class="reveal">Ce que je maîtrise</h2>
+      <div class="skills">
+        <div class="reveal">
+          <h3>Domaines</h3>
+          <div class="bar"><p>Langages de programmation</p><div><i data-w="78"></i></div></div>
+          <div class="bar"><p>Développement web</p><div><i data-w="88"></i></div></div>
+          <div class="bar"><p>Bases de données</p><div><i data-w="64"></i></div></div>
+          <div class="bar"><p>Architecture de logiciels</p><div><i data-w="72"></i></div></div>
+          <div class="bar"><p>Sécurité</p><div><i data-w="48"></i></div></div>
+        </div>
+        <div class="reveal">
+          <h3>Outils et logiciels</h3>
+          <div id="tools"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="parcours">
+    <div class="wrap tl">
+      <div class="reveal">
+        <h3>Expériences professionnelles</h3>
+        <ol>
+          <li><h4>Développeur Web – Ministère des Finances du Bénin</h4><p class="sub">Stage · Refonte du site web institutionnel</p>
+            <ul><li>Analyse de l’existant et modernisation de l’interface du site</li><li>Nouvelles fonctionnalités et amélioration de l’expérience utilisateur</li><li>Tests, mise en production et déploiement</li></ul></li>
+          <li><h4>Développeur Web – Ministère du Travail et de la Fonction Publique</h4><p class="sub">Stage · Plateforme de gestion des congés</p>
+            <ul><li>Conception et développement d’un système de demande et de validation de congés</li><li>Modules de gestion des utilisateurs et de suivi des demandes</li></ul></li>
+          <li><h4>Développeur Mobile – Cerb Tech (Startup)</h4><p class="sub">Junior développeur mobile</p>
+            <ul><li>Développement et amélioration de fonctionnalités d’applications mobiles</li><li>Collaboration avec l’équipe technique sur la qualité et la stabilité</li><li>Participation au design UX/UI</li></ul></li>
+        </ol>
+      </div>
+      <div class="reveal">
+        <h3>Diplômes</h3>
+        <ol>
+          <li><h4>Master en Ingénierie Informatique IA et Big Data</h4><p class="sub">ISGA, Casablanca · 2023 – 2026</p></li>
+          <li><h4>Bachelor en Science informatique</h4><p class="sub">EPITECH Bénin, Cotonou · 2020 – 2023</p></li>
+          <li><h4>Baccalauréat en Mathématique et Physique Chimie</h4><p class="sub">Collège Père Planque, Cotonou · 2017 – 2020</p></li>
+        </ol>
+        <h3 style="margin-top:1rem">Centres d’intérêt</h3>
+        <p class="sub" style="font-size:1rem">Codage créatif et projets personnels, musique, jeux vidéo, sport.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap reveal">
+      <h2>Travaillons ensemble.</h2>
+      <a class="mail" href="mailto:chrisloanatannon@gmail.com">chrisloanatannon@gmail.com</a>
+      <div class="links">
+        <a href="tel:+2290154307504">+229 01 54 30 75 04</a>
+        <span>Cotonou, Bénin</span>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">© 2026 Chris-Loan Atannon</div></footer>
+
+<script>
+/* outils */
+const tools=[["MongoDB",4],["Power BI",4],["Python",4],["Django",3],["MySQL",3],["Kafka",3],["Zookeeper",3]];
+document.getElementById('tools').innerHTML=tools.map(([n,l])=>
+  `<div class="tool"><span>${n}</span><span class="dots" aria-label="Niveau ${l} sur 5">${[1,2,3,4,5].map(i=>`<s class="${i<=l?'on':''}"></s>`).join('')}</span></div>`).join('');
+
+/* apparition au défilement */
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  e.target.classList.add('in');
+  e.target.querySelectorAll('[data-w]').forEach(b=>b.style.width=b.dataset.w+'%');
+  io.unobserve(e.target);
+}),{threshold:.2});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* mots qui changent */
+const words=["IA","Big Data","Machine Learning","Data Science"];let wi=0;
+const wEl=document.getElementById('word');
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
+  setInterval(()=>{wi=(wi+1)%words.length;wEl.textContent=words[wi]},2200);
+}
+
+/* thème */
+const root=document.documentElement;
+document.getElementById('theme').onclick=()=>{
+  const dark=getComputedStyle(root).getPropertyValue('--bg').trim().toLowerCase()==='#0c1a12';
+  root.dataset.theme=dark?'light':'dark';
+};
+
+/* réseau de neurones interactif */
+const cv=document.getElementById('net'),ctx=cv.getContext('2d');
+let W,H,pts=[],mouse={x:-999,y:-999};
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function size(){
+  const r=cv.getBoundingClientRect(),d=devicePixelRatio||1;
+  W=r.width;H=r.height;cv.width=W*d;cv.height=H*d;ctx.setTransform(d,0,0,d,0,0);
+  const n=Math.min(90,Math.floor(W*H/14000));
+  pts=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35}));
+}
+function draw(){
+  const accent=getComputedStyle(root).getPropertyValue('--accent').trim();
+  const line=getComputedStyle(root).getPropertyValue('--muted').trim();
+  ctx.clearRect(0,0,W,H);
+  for(const p of pts){
+    if(!reduce){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1}
+    const dx=mouse.x-p.x,dy=mouse.y-p.y,dm=Math.hypot(dx,dy);
+    if(dm<140&&!reduce){p.x+=dx*.012;p.y+=dy*.012}
+  }
+  for(let i=0;i<pts.length;i++){
+    const a=pts[i];
+    for(let j=i+1;j<pts.length;j++){
+      const b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+      if(d<130){ctx.globalAlpha=(1-d/130)*.35;ctx.strokeStyle=line;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke()}
+    }
+    const near=Math.hypot(mouse.x-a.x,mouse.y-a.y)<140;
+    ctx.globalAlpha=near?1:.55;ctx.fillStyle=near?accent:line;
+    ctx.beginPath();ctx.arc(a.x,a.y,near?4:2.4,0,7);ctx.fill();
+  }
+  ctx.globalAlpha=1;
+  if(!reduce)requestAnimationFrame(draw);
+}
+addEventListener('resize',()=>{size();if(reduce)draw()});
+cv.parentElement.addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top});
+cv.parentElement.addEventListener('pointerleave',()=>{mouse.x=mouse.y=-999});
+size();draw();
+</script>
+</body>
+</html>
